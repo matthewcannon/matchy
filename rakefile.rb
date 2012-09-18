@@ -1,4 +1,4 @@
-task :default => [:recycle_app, :phantomjs, :cucumber]
+task :default => [:recycle_app, :phantomjs, :cucumber, :stop_all]
 
 task :recycle_app => [:stop_all, :drop_db, :start_all]
 
