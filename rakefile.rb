@@ -1,29 +1,37 @@
-task :default => [:recycle_app, :phantomjs, :cucumber, :stop_all]
+task :default => [:recycle, :phantomjs, :cucumber, :stop_all]
 
-task :setup => [:clean, :install_node_modules]
+task :setup => [:clean, :bundle, :install_node_modules]
 
-task :clean => [:clean_node_modules]
+task :clean => [:clean_bundle, :clean_node_modules]
+
+task :clean_bundle do
+	system 'rm Gemfile.lock -f'
+end
 
 task :clean_node_modules do
 	system 'rm node_modules/ -r -f'
+end
+
+task :bundle do
+	system 'bundle install'
 end
 
 task :install_node_modules do
 	system 'sudo npm install'
 end
 
-task :recycle_app => [:stop_all, :start_all]
+task :recycle => [:stop_all, :start_all]
 
 task :stop_all => [:stop_node]
 
 task :start_all => [:start_node]
 
 task :stop_node do
-	system 'kill node'
+	system 'killall node'
 end
 
 task :start_node do
-	system 'node express/app.js'
+	system 'node express/app.js &'
 end
 
 task :cucumber do
@@ -31,5 +39,5 @@ task :cucumber do
 end
 
 task :phantomjs do
-	system './tools/phantomjs/bin/phantomjs tools/phantomjs/examples/run-qunit.js test/tests.html'
+	system './tools/phantomjs/bin/phantomjs ./tools/phantomjs/examples/run-qunit.js ./test/tests.html'
 end
