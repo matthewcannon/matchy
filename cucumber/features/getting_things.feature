@@ -1,10 +1,10 @@
-Feature: Getting things
+Feature: getting things
 
-	Scenario: Get nothing
+	Scenario: get nothing
 
 		Given no things
-		 When I ask for Pencil
-		 Then I get nothing
+		 When i ask for pencil
+		 Then i get nothing
 
 	#Scenario: Get one thing
 

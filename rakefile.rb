@@ -35,7 +35,7 @@ task :start_node do
 end
 
 task :cucumber do
-	system 'cd cucumber && cucumber'
+	system 'cd cucumber && bundle exec cucumber'
 end
 
 task :phantomjs do
