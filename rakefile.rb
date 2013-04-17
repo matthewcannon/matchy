@@ -9,7 +9,7 @@ task :clean_bundle do
 end
 
 task :clean_node_modules do
-	system 'rm node_modules/ -r -f'
+	system 'sudo rm node_modules/ -r -f'
 end
 
 task :bundle do
@@ -40,4 +40,8 @@ end
 
 task :phantomjs do
 	system './tools/phantomjs/bin/phantomjs ./tools/phantomjs/examples/run-qunit.js ./test/tests.html'
+end
+
+task :guard do
+	system 'bundle exec guard'	
 end
