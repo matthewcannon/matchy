@@ -1,9 +1,9 @@
-Given(/^no things$/) do
+Given /^no things$/ do
 end
 
-When(/^i ask for pencil$/) do
+When /^i ask for pencil$/ do
 end
 
-Then(/^i get nothing$/) do
+Then /^i get nothing$/ do
 	visit('/')
 end

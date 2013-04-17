@@ -1,8 +1,9 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
 group :cucumber do
-	gem "cucumber"
-	gem "capybara"
+	gem 'cucumber'
+	gem 'capybara'
+	gem 'selenium-webdriver'
 end
 
 group :guard do
