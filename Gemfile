@@ -8,7 +8,9 @@ group :cucumber do
 end
 
 group :guard do
-	gem 'rb-inotify', '~> 0.9'
+	gem 'rb-inotify', :require => false
+	gem 'rb-fsevent', :require => false
+	gem 'rb-fchange', :require => false
 	gem 'guard'
 	gem 'guard-bundler'
 end
