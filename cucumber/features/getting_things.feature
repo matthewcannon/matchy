@@ -1,5 +1,6 @@
 Feature: getting things
 
+	@javascript
 	Scenario: get nothing
 
 		Given no things

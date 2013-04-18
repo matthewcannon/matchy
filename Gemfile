@@ -4,6 +4,7 @@ group :cucumber do
 	gem 'cucumber'
 	gem 'capybara'
 	gem 'selenium-webdriver'
+	gem 'capybara-webkit'
 end
 
 group :guard do
