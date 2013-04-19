@@ -1,4 +1,4 @@
-task :default => [:recycle, :phantomjs, :cucumber, :stop_all]
+task :default => [:recycle, :phantomjs, :cucumber, :stop]
 
 task :setup => [:clean, :bundle, :install_node_modules]
 
@@ -20,11 +20,11 @@ task :install_node_modules do
 	system 'sudo npm install'
 end
 
-task :recycle => [:stop_all, :start_all]
+task :recycle => [:stop, :start]
 
-task :stop_all => [:stop_node]
+task :stop => [:stop_node]
 
-task :start_all => [:start_node]
+task :start => [:start_node]
 
 task :stop_node do
 	system 'killall node'
@@ -43,5 +43,5 @@ task :phantomjs do
 end
 
 task :guard do
-	system 'bundle exec guard'	
+	system 'cd cucumber && bundle exec guard'	
 end

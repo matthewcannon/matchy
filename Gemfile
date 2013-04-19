@@ -13,4 +13,5 @@ group :guard do
 	gem 'rb-fchange', :require => false
 	gem 'guard'
 	gem 'guard-bundler'
+	gem 'guard-cucumber'
 end
