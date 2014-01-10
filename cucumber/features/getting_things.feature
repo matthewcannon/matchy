@@ -1,11 +1,11 @@
 Feature: getting things
 
 	@javascript
-	Scenario: get nothing
+	Scenario: Get nothing
 
 		Given no things
-		 When i ask for pencil
-		 Then i get nothing
+		 When I ask for Pencil
+		 Then I get nothing
 
 	#Scenario: Get one thing
 

@@ -1,9 +1,11 @@
 Given /^no things$/ do
 end
 
-When /^i ask for pencil$/ do
+When /^I ask for Pencil$/ do
+    visit('/')
 end
 
-Then /^i get nothing$/ do
-	visit('/')
+Then /^I get nothing$/ do
+    # alternative: expect 'search status' element to have 'not found' class
+    expect(page).to have_content("I couldn't get this for you.")
 end

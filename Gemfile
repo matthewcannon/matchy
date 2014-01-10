@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 group :cucumber do
+    gem 'rspec'
 	gem 'cucumber'
 	gem 'capybara'
 	gem 'selenium-webdriver'
