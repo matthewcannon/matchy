@@ -1,4 +1,4 @@
-task :default => [:recycle, :phantomjs, :cucumber, :stop]
+task :default => [:recycle, :cucumber, :stop]
 
 task :setup => [:clean, :bundle, :install_node_modules]
 
@@ -31,17 +31,17 @@ task :stop_node do
 end
 
 task :start_node do
-	system 'node express/app.js &'
+	system 'node app.js &'
 end
 
 task :cucumber do
 	system 'cd cucumber && bundle exec cucumber'
 end
 
-task :phantomjs do
-	system './tools/phantomjs/bin/phantomjs ./tools/phantomjs/examples/run-qunit.js ./test/tests.html'
-end
-
 task :guard do
 	system 'cd cucumber && bundle exec guard'	
+end
+
+task :remove_deleted_files_from_git do
+    system 'git rm $(git ls-files --deleted)'
 end
