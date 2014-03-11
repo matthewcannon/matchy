@@ -52,11 +52,11 @@ task :stage do
 end
 
 task :publish do
-    system 'cd ./pub'
+    system 'cd ./pub/'
     system 'git add .'
-    system 'git commit -m \'publish\''
-    system 'git push heroku master'
+    system 'git commit -m \'publish\'' 
+    system 'git push heroku master' 
     system 'heroku ps:scale web=1'
-    system 'heroku ps'
+    system 'heroku ps' 
     system 'heroku open'
 end
