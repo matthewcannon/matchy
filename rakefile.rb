@@ -47,16 +47,16 @@ task :remove_deleted_files_from_git do
 end
 
 task :stage do
-    system 'cp Procfile ./pub -f'
-    system 'cd ./pub && foreman start'
+    system 'cp Procfile ./pub/ -f'
+    system 'cd ./pub/ && foreman start'
 end
 
 task :publish do
-    system 'cd ./pub/'
-    system 'git add .'
-    system 'git commit -m \'publish\'' 
-    system 'git push heroku master' 
-    system 'heroku ps:scale web=1'
-    system 'heroku ps' 
-    system 'heroku open'
+    #system 'cd ./pub/'
+    #system 'git add .'
+    #system 'git commit -m \'publish\'' 
+    #system 'git push heroku master' 
+    #system 'heroku ps:scale web=1'
+    #system 'heroku ps' 
+    #system 'heroku open'
 end
