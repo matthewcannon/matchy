@@ -6,6 +6,7 @@ task :clean => [:clean_bundle, :clean_node_modules]
 
 task :clean_bundle do
 	system 'rm Gemfile.lock -f'
+    system 'rm ./.bundle/ -rf'
 end
 
 task :clean_node_modules do
