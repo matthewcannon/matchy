@@ -1,3 +1,3 @@
-guard 'cucumber', :cli => '--no-profile' do
+guard 'cucumber', :cli => '--no-profile -o ./log/cucumber.log' do
   watch('features/getting_things.feature') { 'features' }
 end

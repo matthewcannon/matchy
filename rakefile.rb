@@ -2,7 +2,7 @@ task :setup => [:clean, :bundle, :install_node_modules]
 
 task :validate => [:recycle, :cucumber, :stop]
 
-task :clean => [:clean_bundle, :clean_node_modules]
+task :clean => [:clean_bundle, :clean_node_modules, :clean_logs]
 
 task :clean_bundle do
 	system 'rm Gemfile.lock -f'
@@ -10,7 +10,14 @@ task :clean_bundle do
 end
 
 task :clean_node_modules do
-	system 'sudo rm node_modules/ -r -f'
+	system 'sudo rm node_modules/ -rf'
+end
+
+task :clean_logs => [:clean_cucumber_logs] do
+end
+
+task :clean_cucumber_logs do
+    system 'rm ./cucumber/log/*'
 end
 
 task :bundle do
@@ -36,7 +43,7 @@ task :start_node do
 end
 
 task :cucumber do
-	system 'cd cucumber && bundle exec cucumber'
+	system 'cd cucumber && bundle exec cucumber -o ./log/cucumber.log'
 end
 
 task :guard => [:recycle] do
