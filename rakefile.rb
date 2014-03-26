@@ -39,8 +39,8 @@ task :cucumber do
 	system 'cd cucumber && bundle exec cucumber'
 end
 
-task :guard do
-	system 'cd cucumber && bundle exec guard'	
+task :guard => [:recycle] do
+	system 'cd cucumber && bundle exec guard -i'	
 end
 
 task :remove_deleted_files_from_git do
