@@ -17,7 +17,7 @@ task :clean_logs => [:clean_cucumber_logs] do
 end
 
 task :clean_cucumber_logs do
-    system 'rm ./cucumber/log/*'
+    system 'rm ./cucumber/log/*.log'
 end
 
 task :bundle do
@@ -42,7 +42,8 @@ task :start_node do
 	system 'node app.js &'
 end
 
-task :cucumber do
+task :cucumber => [:clean_cucumber_logs] do
+    system 'mkdir ./cucumber/log'
 	system 'cd cucumber && bundle exec cucumber -o ./log/cucumber.log'
 end
 
