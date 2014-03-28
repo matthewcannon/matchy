@@ -1,6 +1,6 @@
 task :setup => [:clean, :bundle, :install_node_modules]
 
-task :validate => [:recycle, :cucumber, :stop]
+task :check => [:recycle, :cucumber, :stop]
 
 task :clean => [:clean_bundle, :clean_node_modules, :clean_logs]
 
