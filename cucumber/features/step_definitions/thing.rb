@@ -3,6 +3,7 @@ end
 
 When /^I ask for Pencil$/ do
     visit('/')
+#    fill_in 'Name', with: 'Pencil'
 end
 
 Then /^I get nothing$/ do

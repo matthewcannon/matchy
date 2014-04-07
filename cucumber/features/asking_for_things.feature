@@ -1,4 +1,4 @@
-Feature: getting things
+Feature: asking for things
 
 	@javascript
 	Scenario: Get nothing
