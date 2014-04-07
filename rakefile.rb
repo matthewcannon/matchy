@@ -3,7 +3,6 @@ task :setup => [:stop, :clean, :bundle, :install_node_modules]
 task :clean => [:clean_bundle, :clean_node_modules, :clean_logs]
 
 task :clean_bundle do
-	system 'rm Gemfile.lock -f'
     system 'rm ./.bundle/ -rf'
 end
 
@@ -12,8 +11,8 @@ task :clean_node_modules do
 end
 
 task :clean_logs do
-    system 'rm ./log/nodemon.log'
-    system 'rm ./log/mongo.log'
+    system 'rm ./log/nodemon.log -f'
+    system 'rm ./log/mongo.log -f'
 end
 
 task :bundle do
