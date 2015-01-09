@@ -12,4 +12,4 @@ expressApp.get('/', function(req, res) {
     res.sendfile('index.html');
 });
 
-expressApp.listen(process.env.PORT || 8080);
+expressApp.listen(process.env.PORT || 5000);

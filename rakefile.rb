@@ -47,7 +47,7 @@ end
 
 task :check => [:recycle, :cucumber, :stop]
 
-task :cucumber => [:clean_cucumber_logs] do
+task :cucumber do
 	system 'cd cucumber && bundle exec cucumber -o ../log/cucumber.log'
 end
 
