@@ -5,9 +5,6 @@ expressApp.configure(function() {
     expressApp.use(express.static(__dirname + '/public'));
 });
 
-/*
- * browser api
- */
 expressApp.get('/', function(req, res) {
     res.sendfile('index.html');
 });
