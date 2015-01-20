@@ -39,3 +39,7 @@ end
 task :guard do
 	system 'cd cucumber && bundle exec guard -i'	
 end
+
+task :gulp do
+	system 'npm run gulp'
+end
