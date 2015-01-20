@@ -22,8 +22,10 @@ task :install_node_modules do
 	system 'sudo npm install'
 end
 
+task :restart => [:stop_node, :clean_logs, :start_node]
+
 task :start_node do
-	system 'nodemon ./public/server.js > ./log/nodemon.log &'
+	system "nodemon -w './public/' -e 'html, js' ./public/server.js > ./log/nodemon.log &"
 end
 
 task :stop_node do

@@ -1,5 +1,10 @@
 var gulp = require('gulp');
 
+gulp.task('html', function() {
+    return gulp.src('./src/*.html')
+        .pipe(gulp.dest('./public/'));
+});
+
 gulp.task('default', function() {
-	console.log('gulp ok');
+    gulp.watch('./src/*.html', ['html']);
 });
