@@ -38,6 +38,7 @@ task :cucumber do
 	system 'cd cucumber && bundle exec cucumber -o ../log/cucumber.log'
 end
 
+# guard watches for changes to features and step definitions. gulp will take care of the rest
 task :guard do
 	system 'cd cucumber && bundle exec guard -i'	
 end
